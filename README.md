@@ -9,3 +9,6 @@ First app is all django stuff as volume for docker
 Second app is the project
 
 "apps" as in django term in the project app are: core, user, etc.
+
+# later when creating eg. user app:
+docker-compose run --rm app sh -c "python manage.py startapp user"
