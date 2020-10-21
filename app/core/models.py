@@ -13,7 +13,7 @@ class UserManager(BaseUserManager):
 
         user = self.model(email=self.normalize_email(email), **extra_fields)
         user.set_password(password)
-        user.save(using=self._db)#param.using if there where multiple db´s
+        user.save(using=self._db)
 
         return user
 
@@ -37,6 +37,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     objects = UserManager()
 
     USERNAME_FIELD = 'email'
+
 
 class Tag(models.Model):
     """Tag to be used for a recipe"""
